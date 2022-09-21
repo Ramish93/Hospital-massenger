@@ -12,6 +12,10 @@ const Auth = () => {
 
     }
 
+    const switchMode = () => {
+        setIsSignup((prevIsSignup) => !prevIsSignup); 
+    }
+
   return (
     <div className='auth__form-container'>
         <div className='auth__form-container_fields'>
@@ -44,10 +48,26 @@ const Auth = () => {
                             <label htmlFor='password'>Password</label>
                             <input type="password" name='password' placeholder='Type Password' onChange={handleChange} required />
                         </div>
+                        {isSignup && (
+                        <div className='auth__form-container_fields-content_input'>
+                            <label htmlFor='confirmPassword'>Confirm Password</label>
+                            <input type="password" name='confirmPassword' placeholder='Confirm Password' onChange={handleChange} required />
+                        </div>
+                        )}
                 </form>
+                <div className='auth__form-container_fields-account'>
+                    <p >{isSignup ?
+                    "Already have an account: "
+                    :"Don't have an account yet: "
+                    }
+                    <span onClick={switchMode}>{isSignup ? "Sign In": "Sign Up!"}</span>
+                    </p>
+                </div>
             </div>
         </div>
-        
+        <div className='auth__form-container_image'>
+            <img src={signinImage} alt="sign in image" />
+        </div>
     </div>
   )
 }
