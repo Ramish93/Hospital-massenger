@@ -20,7 +20,7 @@ const login = async (req, res) => {
 
         if(!users.length) return res.status(400).json({message: 'User not found'})
 
-        const success = await bcrypt.compare(password, users[0].hashedPassword)
+        const success = await bcrypt.compare(password, users[0].hashedPassword) 
 
         const token = serverClient.createUserToken(users[0].id)
         
