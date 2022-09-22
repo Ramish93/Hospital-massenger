@@ -30,7 +30,10 @@ const CompanyHeader = () => (
 
 )
 
-const ChannelListComponent = () => {
+const ChannelListComponent = ({isCreating,
+  setIsCreating,
+  setCreateType,
+  setIsEditing}) => {
 
   const logout = () => {
       cookies.remove('userId');
@@ -57,6 +60,10 @@ const ChannelListComponent = () => {
             <TeamChannelList
               {...listProps}
               type='team'
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps)=>(
