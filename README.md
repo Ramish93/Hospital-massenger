@@ -5,4 +5,4 @@
 * Finished app will be on localhost:3000
 
 
-![image of preview page](client/assets/preview.png?raw=true "bug picture")
+![image of preview page](client/src/assets/preview.png?raw=true "bug picture")
